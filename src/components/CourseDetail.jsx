@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
     Clock, Users, Layers, BookOpen, PlayCircle, Star
 } from 'lucide-react';
@@ -29,12 +30,15 @@ const Bullet = ({ children }) => (
     </li>
 );
 
-const CurriculumItem = ({ title, duration }) => (
+const CurriculumItem = ({ title, duration, index }) => (
     <li className="flex items-center justify-between py-2 border-b last:border-none">
-        <div className="flex items-center gap-2 text-gray-800">
+        <Link
+            to={`/course/lesson/${index}`}
+            className="flex items-center gap-2 text-gray-800 hover:text-lime-600 transition-colors"
+        >
             <PlayCircle className="h-4 w-4" />
             <span>{title}</span>
-        </div>
+        </Link>
         <span className="text-sm text-gray-500">{duration}</span>
     </li>
 );
@@ -105,7 +109,12 @@ const CourseDetail = ({ course }) => {
                                 { title: 'Deploy & Verify', duration: '25m' },
                                 { title: 'Best Practices & Next Steps', duration: '15m' },
                             ]).map((item, i) => (
-                                <CurriculumItem key={i} title={item.title} duration={item.duration} />
+                                <CurriculumItem
+                                    key={i}
+                                    title={item.title}
+                                    duration={item.duration}
+                                    index={i} // pass index for routing
+                                />
                             ))}
                         </ul>
                     </SectionCard>

@@ -17,7 +17,8 @@ const Header = ({ onSearch }) => {
         { name: 'Linux Terminal', href: '/terminal' },
         { name: 'Code Editor', href: '/code-editor' },
         { name: 'About', href: '/about' },
-        { name: 'Contact', href: '/contact' }
+        { name: 'Contact', href: '/contact' },
+        { name: 'Video Player', href: '/video-player' }
     ];
 
     const isActive = (path) => location.pathname === path;

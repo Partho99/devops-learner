@@ -13,6 +13,8 @@ import Contact from './src/pages/Contact.jsx';
 import NotFound from './src/pages/NotFound.jsx';
 import CourseDetails from './src/pages/CourseDetails.jsx';
 import CodeEditorPage from "./src/pages/CodeEditorPage.jsx";
+import VideoPlayer from "./src/components/VideoPlayer.jsx";
+import CoursePlayerPage from "./src/pages/CoursePlayerPage.jsx";
 
 export default function App() {
     return (
@@ -26,8 +28,10 @@ export default function App() {
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} />
                         <Route path="/code-editor" element={<CodeEditorPage />} />
+                        <Route path="/video-player" element={<VideoPlayer />} />
                         <Route path="*" element={<NotFound />} />
-                        <Route path="/courses/:id" element={<CourseDetails />} /> {/* ✅ FIX */}
+                        <Route path="/courses/:id" element={<CourseDetails />} />
+                        <Route path="/course/lesson/:lessonId" element={<CoursePlayerPage />} />
                     </Routes>
                     <ToastContainer
                         position="top-right"
