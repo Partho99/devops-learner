@@ -18,7 +18,7 @@ const Header = ({ onSearch }) => {
         { name: 'Code Editor', href: '/code-editor' },
         { name: 'About', href: '/about' },
         { name: 'Contact', href: '/contact' },
-        { name: 'Video Player', href: '/video-player' }
+        { name: 'Sign In', href: '/sign-in' }
     ];
 
     const isActive = (path) => location.pathname === path;
