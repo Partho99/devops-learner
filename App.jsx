@@ -17,6 +17,7 @@ import VideoPlayer from "./src/components/VideoPlayer.jsx";
 import CoursePlayerPage from "./src/pages/CoursePlayerPage.jsx";
 import LoginPage from "./src/pages/Login.jsx";
 import RegisterPage from "./src/pages/Register.jsx";
+import Authorized from "./src/pages/Authorized.jsx";
 
 export default function App() {
     return (
@@ -36,6 +37,7 @@ export default function App() {
                         <Route path="*" element={<NotFound/>}/>
                         <Route path="/courses/:id" element={<CourseDetails/>}/>
                         <Route path="/course/lesson/:lessonId" element={<CoursePlayerPage/>}/>
+                        <Route path="/authorized" element={<Authorized />} />
                     </Routes>
                     <ToastContainer
                         position="top-right"

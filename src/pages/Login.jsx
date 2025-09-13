@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Layout from "../components/Layout";
 import { Link } from 'react-router-dom';
+import {loginWithOidc} from "../hooks/useOidcLogin.js";
 
 // Validation schema
 const loginSchema = z.object({
@@ -120,10 +121,10 @@ export default function Login() {
                                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
                                     <button
                                         type="button"
-                                        onClick={() => toast.info("Google Sign-In coming soon")}
-                                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 shadow-sm transition-colors hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2"
+                                        onClick={() => loginWithOidc()}
+                                        className="inline-flex w-full items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-semibold text-gray-800 shadow-sm hover:bg-gray-50"
                                     >
-                                        <Chrome className="h-4 w-4"/>
+                                        <Chrome className="h-4 w-4" />
                                         Continue with Google
                                     </button>
                                     <button
